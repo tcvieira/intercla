@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Merriweather", "Helvetica Neue", Arial, sans-serif;
 }
 
 hr {
@@ -35,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 .bg-primary {
@@ -83,7 +83,7 @@ img::-moz-selection {
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: #fff;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
@@ -93,16 +93,17 @@ img::-moz-selection {
   font-weight: 700;
   text-transform: uppercase;
   color: #1994e1;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
-#mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+#mainNav .navbar-brand:focus,
+#mainNav .navbar-brand:hover {
   color: #1994e1;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #212529;
@@ -132,7 +133,8 @@ img::-moz-selection {
   #mainNav .navbar-brand {
     color: rgba(255, 255, 255, 1);
   }
-  #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+  #mainNav .navbar-brand:focus,
+  #mainNav .navbar-brand:hover {
     color: #fff;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link {
@@ -153,7 +155,8 @@ img::-moz-selection {
   #mainNav.navbar-shrink .navbar-brand {
     color: #1994e1;
   }
-  #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
+  #mainNav.navbar-shrink .navbar-brand:focus,
+  #mainNav.navbar-shrink .navbar-brand:hover {
     color: #1994e1;
   }
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link,
@@ -248,19 +251,31 @@ header.masthead p {
   text-align: center;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+.portfolio-box
+  .portfolio-box-caption
+  .portfolio-box-caption-content
+  .project-category,
+.portfolio-box
+  .portfolio-box-caption
+  .portfolio-box-caption-content
+  .project-name {
   padding: 0 15px;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+.portfolio-box
+  .portfolio-box-caption
+  .portfolio-box-caption-content
+  .project-category {
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+.portfolio-box
+  .portfolio-box-caption
+  .portfolio-box-caption-content
+  .project-name {
   font-size: 18px;
 }
 
@@ -273,10 +288,16 @@ header.masthead p {
 }
 
 @media (min-width: 768px) {
-  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+  .portfolio-box
+    .portfolio-box-caption
+    .portfolio-box-caption-content
+    .project-category {
     font-size: 16px;
   }
-  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+  .portfolio-box
+    .portfolio-box-caption
+    .portfolio-box-caption-content
+    .project-name {
     font-size: 22px;
   }
 }
@@ -290,7 +311,7 @@ header.masthead p {
   text-transform: uppercase;
   border: none;
   border-radius: 300px;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 .btn-xl {
@@ -302,12 +323,15 @@ header.masthead p {
   border-color: #1994e1;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
   color: #1994e1;
   background-color: #fff !important;
 }
 
-.btn-primary:active, .btn-primary:focus {
+.btn-primary:active,
+.btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -315,7 +339,9 @@ header.masthead p {
   color: #1994e1;
 }
 
-.btn-light:hover, .btn-light:focus, .btn-light:active {
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
   color: #fff !important;
   background-color: #1994e1 !important;
   border-style: solid;
@@ -334,7 +360,9 @@ header.masthead p {
   border-color: #1994e1; /*rgba(204, 204, 204, 0.4);*/
 }
 
-.leaderboard-link:hover i, .leaderboard-link:hover h3, .leaderboard-link:hover p{
+.leaderboard-link:hover i,
+.leaderboard-link:hover h3,
+.leaderboard-link:hover p {
   color: #fff !important;
 }
 
@@ -345,5 +373,66 @@ header.masthead p {
 }
 
 .table-leaderboard {
-  padding: 2rem 1rem 1rem 1rem!important;
+  padding: 2rem 1rem 1rem 1rem !important;
+}
+
+.table-style {
+  border-spacing: 0 2px;
+  border-collapse: separate;
+}
+
+.table-style thead tr th:first-child {
+  width: 4%;
+  border-radius: 6px 0 0 0;
+}
+
+.table-style thead tr th:last-child {
+  border-radius: 0 6px 0 0;
+}
+
+.table-style tbody tr td {
+  background-color: rgba(0, 0, 0, 0.45);
+  border: 0;
+  color: #fff;
+}
+
+.table-style tbody tr td:first-child,
+.table-style tbody tr td:last-child {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.table-style tbody tr .atleta span {
+  display: block;
+  width: 240px;
+  line-height: 170%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.table-style tbody tr .pontos span {
+  text-align: center;
+  display: block;
+}
+
+.table-style tbody tr .pontos span:last-child {
+  font-weight: 300;
+}
+
+.table-style tbody tr .pontos span {
+  display: block;
+  line-height: 170%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.table-style tbody tr .pontos {
+  vertical-align: middle;
+}
+
+.table-styles tbody tr td.d-sm-table-cell span:last-child {
+  font-size: 10px;
 }
