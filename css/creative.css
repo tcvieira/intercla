@@ -303,10 +303,47 @@ header.masthead p {
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  color: #000;
+  color: #1994e1;
   background-color: #fff !important;
 }
 
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5) !important;
+}
+
+.btn-light {
+  color: #1994e1;
+}
+
+.btn-light:hover, .btn-light:focus, .btn-light:active {
+  color: #fff !important;
+  background-color: #1994e1 !important;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fff;
+}
+
+.leaderboard-link:hover {
+  text-decoration: none;
+}
+
+.leaderboard-link:hover .col {
+  background: #1994e1; /*rgba(204, 204, 204, 0.4);*/
+  text-decoration: none;
+  border-radius: 10px;
+  border-color: #1994e1; /*rgba(204, 204, 204, 0.4);*/
+}
+
+.leaderboard-link:hover i, .leaderboard-link:hover h3, .leaderboard-link:hover p{
+  color: #fff !important;
+}
+
+.leaderboard-link .col {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+.table-leaderboard {
+  padding: 2rem 1rem 1rem 1rem!important;
 }
