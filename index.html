@@ -85,6 +85,14 @@
       <div class="row">
         <div class="col-lg-12 mx-auto text-center">
           <h1 class="section-heading text-white">14/07/18</h1>
+          <div class="countdown">
+              <p class="timer text-white" style="font-size: 24px; font-weight: 600; font-family: sans-serif;">
+                <span id="days"></span>d
+                <span id="hours"></span>h
+                <span id="minutes"></span>m
+                <span id="seconds"></span>s
+              </p>
+            </div>
           <hr class="light my-4">
           <div class="row">
             <a class="col m-1 btn btn-light btn-xl js-scroll-trigger" href="#map">Local</a>
@@ -105,33 +113,39 @@
         </div>
       </div>
       <div class="row">
-        <a class="leaderboard-link m-1 col" href="#">
-          <div class="col text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-battery-1 text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Iniciante</h3>
-              <p class="mb-0">Trios masculino/feminino</p>
+        <div class="leaderboard-link col-md m-1">
+          <a href="#">
+            <div class="text-center">
+              <div class="service-box mt-5 mx-auto">
+                <i class="fa fa-4x fa-battery-1 text-primary mb-3 sr-icons"></i>
+                <h3 class="mb-3">Iniciante</h3>
+                <p class="mb-0">Trios masculino/feminino</p>
+              </div>
             </div>
-          </div>
-        </a>
-        <a class="leaderboard-link m-1 col" href="#">
-          <div class="col text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-battery-2 text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Scale</h3>
-              <p class="mb-0">Trios masculino/feminino</p>
+          </a>
+        </div>
+        <div class="leaderboard-link col-md m-1">
+          <a href="#">
+            <div class="text-center">
+              <div class="service-box mt-5 mx-auto">
+                <i class="fa fa-4x fa-battery-2 text-primary mb-3 sr-icons"></i>
+                <h3 class="mb-3">Scale</h3>
+                <p class="mb-0">Trios masculino/feminino</p>
+              </div>
             </div>
-          </div>
-        </a>
-        <a class="leaderboard-link m-1 col" href="#">
-          <div class="col text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-battery text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">RX</h3>
-              <p class="mb-0">Individual</p>
+          </a>
+        </div>
+        <div class="leaderboard-link col-md m-1">
+          <a href="#">
+            <div class="text-center">
+              <div class="service-box mt-5 mx-auto">
+                <i class="fa fa-4x fa-battery text-primary mb-3 sr-icons"></i>
+                <h3 class="mb-3">RX</h3>
+                <p class="mb-0">Individual</p>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -286,6 +300,51 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.js"></script>
+
+  <script>
+    function countdown(endDate) {
+      let days, hours, minutes, seconds;
+
+      endDate = new Date(endDate).getTime();
+
+      if (isNaN(endDate)) {
+        return;
+      }
+
+      setInterval(calculate, 1000);
+
+      function calculate() {
+        let startDate = new Date();
+        startDate = startDate.getTime();
+
+        let timeRemaining = parseInt((endDate - startDate) / 1000);
+
+        if (timeRemaining >= 0) {
+          days = parseInt(timeRemaining / 86400);
+          timeRemaining = (timeRemaining % 86400);
+
+          hours = parseInt(timeRemaining / 3600);
+          timeRemaining = (timeRemaining % 3600);
+
+          minutes = parseInt(timeRemaining / 60);
+          timeRemaining = (timeRemaining % 60);
+
+          seconds = parseInt(timeRemaining);
+
+          document.getElementById("days").innerHTML = parseInt(days, 10);
+          document.getElementById("hours").innerHTML = ("0" + hours).slice(-2);
+          document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
+          document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
+        } else {
+          return;
+        }
+      }
+    }
+
+    (function () {
+      countdown('07/15/2018 00:00:00 AM');
+    }());
+  </script>
 
 </body>
 

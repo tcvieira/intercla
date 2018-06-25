@@ -354,7 +354,7 @@ header.masthead p {
   text-decoration: none;
 }
 
-.leaderboard-link:hover .col {
+.leaderboard-link:hover {
   background: #1994e1; /*rgba(204, 204, 204, 0.4);*/
   text-decoration: none;
   border-radius: 10px;
@@ -367,10 +367,11 @@ header.masthead p {
   color: #fff !important;
 }
 
-.leaderboard-link .col {
+.leaderboard-link {
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
+  border-color: #1994e1;
 }
 
 .table-leaderboard {
