@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="leaderboardModule">
 
 <head>
 
@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+
+    <base href="/dev/leaderboard/">
 
     <title>InterClã - Leaderboard</title>
 
@@ -26,12 +28,19 @@
     <!-- Custom styles for this template -->
     <link href="../css/creative.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="../css/css-loader.css">
+    <link rel="stylesheet" href="../css/loader-bouncing.css">
+
+    <link rel="stylesheet" href="leaderboard.css">
+
 </head>
 
-<body id="page-top" class="bg-primary">
+<body id="page-top" class="bg-primary" ng-controller="leaderboardCtrl" ng-cloak>
+
+    <div class="loader loader-bouncing is-active" ng-show="carregando"></div>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="../">InterClã</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -42,13 +51,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#">Iniciante</a>
+                    <a class="nav-link js-scroll-trigger" ng-click="toggleCategoria(0)" href="">Iniciante</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#">Scale</a>
+                    <a class="nav-link js-scroll-trigger" ng-click="toggleCategoria(1)" href="">Scale</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#">RX</a>
+                    <a class="nav-link js-scroll-trigger" ng-click="toggleCategoria(2)" href="">RX</a>
                 </li>
             </ul>
         </div>
@@ -59,237 +68,144 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 mx-auto text-center">
-                    <h1 class="section-heading text-white">Iniciante</h1>
+                    <h1 class="section-heading text-white">{{nomes[categoria]}}</h1>
                 </div>
+            </div>
+            <!-- Nav pills -->
+            <div class="row justify-content-center">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#masculino">Masculino</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#feminino">Feminino</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <section class="table-leaderboard" id="iniciante">
-        <div class="table-responsive">
-            <table class="table table-hover table-sm text-center table-style">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>
-                            <i class="fa fa-trophy" aria-hidden="true"></i>
-                        </th>
-                        <th>Competidor</th>
-                        <th class="d-none d-sm-table-cell">WOD 1</th>
-                        <th class="d-none d-sm-table-cell">WOD 2</th>
-                        <th class="d-none d-sm-table-cell">WOD 3</th>
-                        <th class="d-none d-sm-table-cell">WOD 4</th>
-                        <th>Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="pontos">1</td>
-                        <td align="center" class="atleta">
-                            <span>
-                                <b>Atleta 1</b>
-                            </span>
-                            <span class="">Box 5</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>445 lbs</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>120 reps</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>9:35</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>40 reps</span>
-                        </td>
-                        <td class="pontos">5</td>
-                    </tr>
-                    <tr>
-                        <td class="pontos">2</td>
-                        <td align="center" class="atleta">
-                            <span>
-                                <b>Atleta 2</b>
-                            </span>
-                            <span class="">Box 2</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>321 lbs</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>120 reps</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>9:35</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>40 reps</span>
-                        </td>
-                        <td class="pontos">6</td>
-                    </tr>
-                    <tr>
-                        <td class="pontos">3</td>
-                        <td align="center" class="atleta">
-                            <span>
-                                <b>Atleta 3</b>
-                            </span>
-                            <span class="">Box 3</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>321 lbs</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>120 reps</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>9:35</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>40 reps</span>
-                        </td>
-                        <td class="pontos">10</td>
-                    </tr>
-                    <tr>
-                        <td class="pontos">4</td>
-                        <td align="center" class="atleta">
-                            <span>
-                                <b>Atleta 4</b>
-                            </span>
-                            <span class="">Box 3</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>321 lbs</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>120 reps</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>--</b>
-                            </span>
-                            <span></span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>40 reps</span>
-                        </td>
-                        <td class="pontos">14</td>
-                    </tr>
-                    <tr>
-                        <td class="pontos">5</td>
-                        <td align="center" class="atleta">
-                            <span>
-                                <b>Atleta 5</b>
-                            </span>
-                            <span class="">Box 4</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>321 lbs</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>120 reps</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>9:35</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>--</b>
-                            </span>
-                            <span></span>
-                        </td>
-                        <td class="pontos">18</td>
-                    </tr>
-                    <tr>
-                        <td class="pontos">6</td>
-                        <td align="center" class="atleta">
-                            <span>
-                                <b>Atleta 6</b>
-                            </span>
-                            <span class="">Box 5</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>321 lbs</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>120 reps</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>3 pts</b>
-                            </span>
-                            <span>9:35</span>
-                        </td>
-                        <td class="pontos d-none d-sm-table-cell">
-                            <span>
-                                <b>WO</b>
-                            </span>
-                            <span></span>
-                        </td>
-                        <td class="pontos">20</td>
-                    </tr>
-                </tbody>
-            </table>
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+        <!-- MASCULINO -->
+        <div class="tab-pane active" id="masculino">
+            <section class="table-leaderboard">
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm text-center table-style">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>
+                                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                                </th>
+                                <th>Competidor</th>
+                                <th class="d-none d-sm-table-cell">WOD 1</th>
+                                <th class="d-none d-sm-table-cell">WOD 2</th>
+                                <th class="d-none d-sm-table-cell">WOD 3</th>
+                                <th class="d-none d-sm-table-cell">WOD 4</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="atleta in ::leaderboard.masc">
+                                <td class="pontos">{{atleta.pos}}</td>
+                                <td align="center" class="atleta">
+                                    <span>
+                                        <b>{{atleta.nome}}</b>
+                                    </span>
+                                    <span class="">{{atleta.box}}</span>
+                                </td>
+                                <td class="pontos d-none d-sm-table-cell">
+                                    <span ng-class="{'gold' : atleta.wod1.pos == 1}">
+                                        <b>{{atleta.wod1.pos}} pts</b>
+                                    </span>
+                                    <span>{{atleta.wod1.resultado}}</span>
+                                </td>
+                                <td class="pontos d-none d-sm-table-cell">
+                                    <span ng-class="{'gold' : atleta.wod2.pos == 1}">
+                                        <b>{{atleta.wod2.pos}} pts</b>
+                                    </span>
+                                    <span>{{atleta.wod2.resultado}}</span>
+                                </td>
+                                <td class="pontos d-none d-sm-table-cell">
+                                    <span ng-class="{'gold' : atleta.wod3.pos == 1}">
+                                        <b>{{atleta.wod3.pos}} pts</b>
+                                    </span>
+                                    <span>{{atleta.wod3.resultado}}</span>
+                                </td>
+                                <td class="pontos d-none d-sm-table-cell">
+                                    <span ng-class="{'gold' : atleta.wod4.pos == 1}">
+                                        <b>{{atleta.wod4.pos}} pts</b>
+                                    </span>
+                                    <span>{{atleta.wod4.resultado}}</span>
+                                </td>
+                                <td class="pontos">{{atleta.score}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
-    </section>
+
+        <!-- FEMININO -->
+        <div class="tab-pane fade" id="feminino">
+            <section class="table-leaderboard">
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm text-center table-style">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>
+                                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                                </th>
+                                <th>Competidor</th>
+                                <th class="d-none d-sm-table-cell">WOD 1</th>
+                                <th class="d-none d-sm-table-cell">WOD 2</th>
+                                <th class="d-none d-sm-table-cell">WOD 3</th>
+                                <th class="d-none d-sm-table-cell">WOD 4</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="atleta in ::leaderboard.fem">
+                                <td class="pontos">{{atleta.pos}}</td>
+                                <td align="center" class="atleta">
+                                    <span>
+                                        <b>{{atleta.nome}}</b>
+                                    </span>
+                                    <span class="">{{atleta.box}}</span>
+                                </td>
+                                <td class="pontos d-none d-sm-table-cell">
+                                    <span ng-class="{'gold' : atleta.wod1.pos == 1}">
+                                        <b>{{atleta.wod1.pos}} pts</b>
+                                    </span>
+                                    <span>{{atleta.wod1.resultado}}</span>
+                                </td>
+                                <td class="pontos d-none d-sm-table-cell">
+                                    <span ng-class="{'gold' : atleta.wod2.pos == 1}">
+                                        <b>{{atleta.wod2.pos}} pts</b>
+                                    </span>
+                                    <span>{{atleta.wod2.resultado}}</span>
+                                </td>
+                                <td class="pontos d-none d-sm-table-cell">
+                                    <span ng-class="{'gold' : atleta.wod3.pos == 1}">
+                                        <b>{{atleta.wod3.pos}} pts</b>
+                                    </span>
+                                    <span>{{atleta.wod3.resultado}}</span>
+                                </td>
+                                <td class="pontos d-none d-sm-table-cell">
+                                    <span ng-class="{'gold' : atleta.wod4.pos == 1}">
+                                        <b>{{atleta.wod4.pos}} pts</b>
+                                    </span>
+                                    <span>{{atleta.wod4.resultado}}</span>
+                                </td>
+                                <td class="pontos">{{atleta.score}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
 
 
     <!-- Bootstrap core JavaScript -->
@@ -300,6 +216,9 @@
     <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-animate.min.js"></script> -->
 
     <!-- Custom scripts for this template -->
     <script src="../js/creative.js"></script>
