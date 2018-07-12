@@ -10,7 +10,10 @@ angular
     ($scope, $http, $location) => {
       var param = $location.search().cat;
 
-      if (param && (param == "0" || param == "1" || param == "2")) {
+      if (
+        param &&
+        (param == "0" || param == "1" || param == "2" || param == "3")
+      ) {
         $scope.categoria = parseInt(param);
       } else {
         $scope.categoria = 0;
@@ -20,7 +23,7 @@ angular
 
       loadLeaderboard($scope.categoria);
 
-      $scope.nomes = ["Iniciante", "Scale", "RX"];
+      $scope.nomes = ["Iniciante", "Scale", "RX", "Super Atletas"];
 
       $scope.toggleCategoria = function(idx) {
         $scope.categoria = idx;
@@ -31,72 +34,578 @@ angular
       function loadLeaderboard(idx) {
         $scope.carregando = false;
         //$http.get();
-        $scope.leaderboard = {
-          masc: [
-            {
-              nome: "Atleta 1",
-              box: "Box 1",
-              pos: 1,
-              score: 5,
-              wod1: { pos: 1, resultado: "440 reps", wo:false},
-              wod2: { pos: 2, resultado: "440 reps", wo:false},
-              wod3: { pos: 3, resultado: 600, wo:false},
-              wod4: { pos: 4, resultado: 360, wo:false}
-            },
-            {
-              nome: "Atleta 2",
-              box: "Box 2",
-              pos: 2,
-              score: 6,
-              wod1: { pos: 1, resultado: "440 reps", wo:false},
-              wod2: { pos: 2, resultado: "440 reps", wo:false},
-              wod3: { pos: 3, resultado: 600, wo:false},
-              wod4: { pos: 4, resultado: 360, wo:false}
-            },
-            {
-              nome: "Atleta 3",
-              box: "Box 3",
-              pos: 3,
-              score: 7,
-              wod1: { pos: 1, resultado: "440 reps", wo:false},
-              wod2: { pos: 2, resultado: "440 reps", wo:false},
-              wod3: { pos: 3, resultado: 600, wo:false},
-              wod4: { pos: 4, resultado: 360, wo:false}
-            }
-          ],
-          fem: [
-            {
-              nome: "Atleta 4",
-              box: "Box 1",
-              pos: 1,
-              score: 8,
-              wod1: { pos: 1, resultado: "440 reps", wo:false},
-              wod2: { pos: 2, resultado: "440 reps", wo:false},
-              wod3: { pos: 3, resultado: 600, wo:false},
-              wod4: { pos: 4, resultado: 360, wo:false}
-            },
-            {
-              nome: "Atleta 5",
-              box: "Box 2",
-              pos: 2,
-              score: 9,
-              wod1: { pos: 1, resultado: "440 reps", wo:false},
-              wod2: { pos: 2, resultado: "440 reps", wo:false},
-              wod3: { pos: 3, resultado: 600, wo:false},
-              wod4: { pos: 4, resultado: 360, wo:false}
-            },
-            {
-              nome: "Atleta 6",
-              box: "Box 3",
-              pos: 3,
-              score: 10,
-              wod1: { pos: 1, resultado: "440 reps", wo:false},
-              wod2: { pos: 2, resultado: "440 reps", wo:false},
-              wod3: { pos: 3, resultado: 600, wo:false},
-              wod4: { pos: 4, resultado: 360, wo:false}
-            }
-          ]
-        };
+        var leaderboard = [
+          //INICIANTE
+          {
+            masc: [
+              {
+                nome: "De 3 é melhor",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Guerrilheiros do Cross",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Titãs",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Nóis no Bar",
+                box: "Crossfit Matriz",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Os Brows",
+                box: "Crossfit Matriz",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              }
+            ],
+            fem: [
+              {
+                nome: "CLÃdestinas",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Rosas do Cerrado",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Joaninhas",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Pelo Menos",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Insanas",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "As Sousas",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Parceiras do Cross",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Canelas de Grilo",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Só Brutas JK",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Trio General",
+                box: "Vessel CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "4.0 Turbo",
+                box: "Vessel CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Trinity VR3",
+                box: "VR3 CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Matrizetes",
+                box: "Crossfit Matriz",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Oh my WOD",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              }
+            ]
+          },
+          //SCALE
+          {
+            masc: [
+              {
+                nome: "O rei, o principe e o bobo",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "O coach tá vindo",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Os Lesionados",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Pokemons",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Penatras Bom de Bico",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Spartacus",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Mosqueteiros",
+                box: "VR3 CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Tipo C",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Zero Cardio",
+                box: "PW CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Valhalla",
+                box: "Vessel CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Dazarabias",
+                box: "Crossfit Matriz",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              }
+            ],
+            fem: [
+              {
+                nome: "Missão Impossível",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Magnificas",
+                box: "Box não afiliado",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Liga da Justiça",
+                box: "Lakeview Crossfit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "BKR",
+                box: "VR3 CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Ai meu Cardio",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              }
+            ]
+          },
+          //RX
+          {
+            masc: [
+              {
+                nome: "Ivanildo",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Maycon",
+                box: "Nação Crossfit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Meliga",
+                box: "Crossfit Gladius",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Fernando",
+                box: "Nação Crossfit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Matheus Souto",
+                box: "Nação Crossfit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Sandro",
+                box: "CrossFit Clã",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Pepedro",
+                box: "Selva CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Marcus",
+                box: "Selva CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Johnatan",
+                box: "Gama CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Lucas",
+                box: "CrossFit PW",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Markin",
+                box: "TAI CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Tulio",
+                box: "Crossfit Matriz",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Rafael",
+                box: "CrossFit Selva",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              }
+            ],
+            fem: [
+              {
+                nome: "Marina",
+                box: "VR3 CrossFit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Anne",
+                box: "CrossFit Selva",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Layanna",
+                box: "CrossFit Selva",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              },
+              {
+                nome: "Carla",
+                box: "Crossfit 1000 / Crossfit PMDF",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              }
+            ]
+          },
+          //SUPER
+          {
+            masc: [
+              {
+                nome: "Uilian",
+                box: "Carrasco Crossfit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              }
+            ],
+            fem: [
+              {
+                nome: "Maria Clara",
+                box: "VR3 Crossfit",
+                pos: 0,
+                score: 0,
+                wod1: { pos: 0, resultado: "" },
+                wod2: { pos: 0, resultado: "" },
+                wod3: { pos: 0, resultado: "" },
+                wod4: { pos: 0, resultado: "" }
+              }
+            ]
+          }
+        ];
+
+        $scope.leaderboard = leaderboard[idx];
       }
     }
   ]);
