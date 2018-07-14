@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <base href="/leaderboard/">
+    <base href="/app/dev/leaderboard/">
 
     <title>InterClã - Leaderboard</title>
 
@@ -110,8 +110,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="atleta in leaderboard.masc">
-                                <td class="pontos">{{atleta.pos}}</td>
+                            <tr ng-repeat="atleta in leaderboard.masc | orderBy:['score', 'nome'] track by $index">
+                                <td class="pontos">{{$index + 1}}</td>
                                 <td align="center" class="atleta">
                                     <span>
                                         <b>{{atleta.nome}}</b>
@@ -169,8 +169,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="atleta in leaderboard.fem">
-                                <td class="pontos">{{atleta.pos}}</td>
+                            <tr ng-repeat="atleta in leaderboard.fem | orderBy:['score', 'nome'] track by $index">
+                                <td class="pontos">{{$index + 1}}</td>
                                 <td align="center" class="atleta">
                                     <span>
                                         <b>{{atleta.nome}}</b>
