@@ -410,7 +410,7 @@ header.masthead {
 
 .table-style tbody tr .atleta span {
   display: block;
-  width: 240px;
+  /*width: 240px;*/
   line-height: 170%;
   overflow: hidden;
   white-space: nowrap;
