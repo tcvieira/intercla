@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <base href="/leaderboard/">
+    <base href="/dev/leaderboard/">
 
     <title>InterClã - Leaderboard</title>
 
@@ -90,6 +90,12 @@
 
     <!-- Tab panes -->
     <div class="tab-content">
+        <div class="row mt-3 justify-content-center d-sm-none">
+            <span class="badge badge-secondary">
+                <i class="fa fa-rotate-right" aria-hidden="true"></i>
+                Gire a tela para ver os resultados dos WODs
+            </span>
+        </div>
 
         <!-- MASCULINO -->
         <div class="tab-pane active" id="masculino">
@@ -110,7 +116,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="atleta in leaderboard.masc | orderBy:['score', 'nome'] track by $index">
+                            <tr ng-repeat="atleta in leaderboard.masc | orderBy:['score', orderByComDesempate, 'nome'] track by $index">
                                 <td class="pontos">{{$index + 1}}</td>
                                 <td align="center" class="atleta">
                                     <span>
@@ -169,7 +175,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="atleta in leaderboard.fem | orderBy:['score', 'nome'] track by $index">
+                            <tr ng-repeat="atleta in leaderboard.fem | orderBy:['score', orderByComDesempate, 'nome'] track by $index">
                                 <td class="pontos">{{$index + 1}}</td>
                                 <td align="center" class="atleta">
                                     <span>

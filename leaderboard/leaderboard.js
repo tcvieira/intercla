@@ -47,5 +47,9 @@ angular
             );
           });
       }
+
+      $scope.orderByComDesempate = function(competidor) {
+        return competidor.score + competidor.wod3.pos;
+      };
     }
   ]);
