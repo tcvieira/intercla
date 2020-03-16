@@ -218,6 +218,19 @@ header.intercla {
   background-repeat: no-repeat;
 }
 
+header.intercla5 {
+  margin-top: 56px;
+  padding-top: 10rem;
+  padding-bottom: 40%;
+  background-image: url("../img/intercla5.png");
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+5
 header.murph2018 {
   margin-top: 56px;
   padding-top: 10rem;
