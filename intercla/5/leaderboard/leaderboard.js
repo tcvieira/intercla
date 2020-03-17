@@ -23,7 +23,7 @@ angular
 
       loadLeaderboard($scope.categoria);
 
-      $scope.nomes = ["Iniciante", "Scale", "RX"];
+      $scope.nomes = ["Beginner", "Scale", "RX"];
 
       $scope.toggleCategoria = function(idx) {
         $scope.categoria = idx;
